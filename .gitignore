@@ -1,5 +1,8 @@
 docs/site/
 
+#pt files
+*.pt
+
 # test cache
 manual_test/
 
