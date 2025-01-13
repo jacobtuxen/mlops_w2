@@ -3,27 +3,25 @@ name: Code Coverage
 on: [push, pull_request]
 
 jobs:
-  run:
+  build:
     runs-on: ubuntu-latest
-    env:
-      OS: ubuntu-latest
-      PYTHON: '3.9'
 
     steps:
     - name: Checkout
       uses: actions/checkout@v4
-    - name: Setup Python
+    - name: Set up Python
       uses: actions/setup-python@v5
       with:
         python-version: 3.11
         cache: 'pip'
-
-    - name: Generate Report
+    - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         pip install coverage
         pip install .
+    - name: Generate report
+      run: |
         coverage run -m pytest tests/
 
     - name: Upload coverage reports to Codecov
@@ -31,3 +29,4 @@ jobs:
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
         slug: jacobtuxen/mlops_w2
+    
