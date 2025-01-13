@@ -1,0 +1,6 @@
+{
+  "name": "my_working_env",
+  "dockerFile": "Dockerfile",
+  "postCreateCommand": "pip install -r requirements.txt && pip install ."
+ //--mount=type=cache,target=~/pip/.cache pip install -r requirements.txt --no-cache-dir
+}

@@ -8,11 +8,11 @@ RUN apt update && \
 COPY requirements.txt requirements.txt
 COPY pyproject.toml pyproject.toml
 COPY src/ src/
-COPY data/ data/
+COPY reports/ reports/
 COPY models/ models/
 
 WORKDIR /
-RUN --mount=type=cache,target=~/pip/.cache pip install -r requirements.txt --no-cache-dir
+RUN pip install -r requirements.txt --no-cache-dir
 RUN pip install . --no-deps --no-cache-dir
 
-ENTRYPOINT ["python", "-u", "src/week2/train.py"]
+ENTRYPOINT ["python", "-u", "src/week2/evaluate.py"]
