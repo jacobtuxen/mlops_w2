@@ -38,5 +38,6 @@ def train(lr: float = 1e-3, epochs: int = 10, output_path: str = "models/model.p
                     best_acc = current_acc
                     torch.save(model.state_dict(), output_path)
 
+
 if __name__ == "__main__":
     typer.run(train)

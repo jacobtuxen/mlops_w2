@@ -1,7 +1,8 @@
-from week2.evaluate import evaluate
-from week2.data import CorruptMNIST
-from week2.model import MyAwesomeModel
 import torch
+from week2.data import CorruptMNIST
+from week2.evaluate import evaluate
+from week2.model import MyAwesomeModel
+
 
 def test_evalaute():
     dataset = CorruptMNIST("data/raw/corruptmnist_v1", split="test")

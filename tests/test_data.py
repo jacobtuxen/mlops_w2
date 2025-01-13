@@ -1,14 +1,18 @@
+import os
+
+import pytest
 from torch.utils.data import Dataset
 from week2.data import CorruptMNIST
-import os
-import pytest
+
 from tests import _PATH_DATA
+
 
 @pytest.mark.skipif(not os.path.exists(_PATH_DATA), reason="Data files not found")
 def test_dataset_type():
     """Test the MyDataset class."""
     dataset = CorruptMNIST(_PATH_DATA)
     assert isinstance(dataset, Dataset), "The dataset is not a valid PyTorch Dataset"
+
 
 @pytest.mark.skipif(not os.path.exists(_PATH_DATA), reason="Data files not found")
 def test_data():
