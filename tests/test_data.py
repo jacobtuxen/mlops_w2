@@ -2,9 +2,9 @@ import os
 
 import pytest
 from torch.utils.data import Dataset
-from week2.data import CorruptMNIST
 
 from tests import _PATH_DATA
+from week2.data import CorruptMNIST
 
 
 @pytest.mark.skipif(not os.path.exists(_PATH_DATA), reason="Data files not found")

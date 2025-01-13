@@ -2,6 +2,7 @@ import re
 
 import pytest
 import torch
+
 from week2.model import MyAwesomeModel
 
 
