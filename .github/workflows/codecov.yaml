@@ -1,4 +1,4 @@
-name: CodeCov
+name: Code Coverage
 
 on: [push, pull_request]
 
@@ -28,7 +28,7 @@ jobs:
         coverage run -m pytest tests/
 
     - name: Upload coverage reports to Codecov
-    uses: codecov/codecov-action@v5
-    with:
-      token: ${{ secrets.CODECOV_TOKEN }}
-      slug: jacobtuxen/mlops_w2
+      uses: codecov/codecov-action@v5
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        slug: jacobtuxen/mlops_w2
