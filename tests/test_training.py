@@ -1,7 +1,10 @@
-from week2.train import train
 import os
+
 import pytest
+from week2.train import train
+
 from tests import _PATH_DATA
+
 
 @pytest.mark.skipif(not os.path.exists(_PATH_DATA), reason="Data files not found")
 def test_train():
