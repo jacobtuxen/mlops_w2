@@ -27,5 +27,8 @@ jobs:
         pip install .
         coverage run -m pytest tests/
 
-    - name: Upload Coverage to Codecov
-      uses: codecov/codecov-action@v2
+    - name: Upload coverage reports to Codecov
+    uses: codecov/codecov-action@v5
+    with:
+      token: ${{ secrets.CODECOV_TOKEN }}
+      slug: jacobtuxen/mlops_w2
